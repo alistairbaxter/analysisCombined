@@ -8,7 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		F38A85B81F1FD035006C87D8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F38A85B71F1FD035006C87D8 /* main.cpp */; };
+		F38A85EB1F1FD215006C87D8 /* libanalysisLib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F38A85DA1F1FD06A006C87D8 /* libanalysisLib.dylib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F38A85D91F1FD06A006C87D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F38A85D51F1FD069006C87D8 /* analysisLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F38A85C71F1FD069006C87D8;
+			remoteInfo = analysisLib;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		F38A85B21F1FD034006C87D8 /* CopyFiles */ = {
@@ -25,6 +36,9 @@
 /* Begin PBXFileReference section */
 		F38A85B41F1FD035006C87D8 /* analysisTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = analysisTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F38A85B71F1FD035006C87D8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		F38A85D51F1FD069006C87D8 /* analysisLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = analysisLib.xcodeproj; path = analysisLib/analysisLib.xcodeproj; sourceTree = "<group>"; };
+		F38A85ED1F1FD2C4006C87D8 /* test1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test1.txt; sourceTree = "<group>"; };
+		F38A85EE1F1FD2C4006C87D8 /* test5.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test5.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F38A85EB1F1FD215006C87D8 /* libanalysisLib.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +56,7 @@
 		F38A85AB1F1FD034006C87D8 = {
 			isa = PBXGroup;
 			children = (
+				F38A85D51F1FD069006C87D8 /* analysisLib.xcodeproj */,
 				F38A85B61F1FD035006C87D8 /* analysisTest */,
 				F38A85B51F1FD035006C87D8 /* Products */,
 			);
@@ -57,9 +73,27 @@
 		F38A85B61F1FD035006C87D8 /* analysisTest */ = {
 			isa = PBXGroup;
 			children = (
+				F38A85EC1F1FD2C4006C87D8 /* TestData */,
 				F38A85B71F1FD035006C87D8 /* main.cpp */,
 			);
 			path = analysisTest;
+			sourceTree = "<group>";
+		};
+		F38A85D61F1FD069006C87D8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F38A85DA1F1FD06A006C87D8 /* libanalysisLib.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F38A85EC1F1FD2C4006C87D8 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				F38A85ED1F1FD2C4006C87D8 /* test1.txt */,
+				F38A85EE1F1FD2C4006C87D8 /* test5.txt */,
+			);
+			path = TestData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,12 +141,28 @@
 			mainGroup = F38A85AB1F1FD034006C87D8;
 			productRefGroup = F38A85B51F1FD035006C87D8 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F38A85D61F1FD069006C87D8 /* Products */;
+					ProjectRef = F38A85D51F1FD069006C87D8 /* analysisLib.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				F38A85B31F1FD034006C87D8 /* analysisTest */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F38A85DA1F1FD06A006C87D8 /* libanalysisLib.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libanalysisLib.dylib;
+			remoteRef = F38A85D91F1FD06A006C87D8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F38A85B01F1FD034006C87D8 /* Sources */ = {
@@ -218,6 +268,7 @@
 		F38A85BC1F1FD035006C87D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = analysisLib/analysisLib/;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -225,6 +276,7 @@
 		F38A85BD1F1FD035006C87D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = analysisLib/analysisLib/;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
