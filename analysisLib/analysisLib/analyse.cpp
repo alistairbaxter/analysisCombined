@@ -26,59 +26,6 @@ int analyse(const char * input, const char * output)
 
     
     std::string inputFileName = std::string(input);
-#if 0
-    std::ifstream inputFile( inputFileName );
-    
-    if (inputFile.is_open())
-    {
-        // Read a line
-        std::string line;
-        while ( getline (inputFile,line) )
-        {
-            if (inputFile.good())
-            {
-                //std::cout << line << '\n';
-                
-                //check if the string represents a valid number
-                for (char currChar : line)
-                {
-                    if (currChar != '-' && currChar != ' ')
-                    {
-                        if (currChar < '0' || currChar > '9')
-                        {
-                            inputFile.close();
-                            return analysis::Error_InvalidNumber;
-                        }
-                    }
-                }
-                
-                // Convert the line to a whole number
-                int64_t newNumber = atoll(line.c_str());
-                
-                // Add the number for analysis
-                analyser.addWholeNumber(newNumber);
-                
-                if (!analyser.isAnalysisValid())
-                {
-                    inputFile.close();
-                    return analysis::Error_InvalidAnalyis;
-                }
-            }
-            else
-            {
-                // Something went wrong while reading
-                inputFile.close();
-                return analysis::Error_ReadError;
-            }
-        }
-        inputFile.close();
-    }
-    else
-    {
-        // We couldn't open the input file
-        return analysis::Error_InputFileInvalid;
-    }
-#endif
     analysis::NumberListParser inputParser(inputFileName);
     
     if (!inputParser.isValid())
